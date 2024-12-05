@@ -1,6 +1,3 @@
-# This is an example .goreleaser.yml file with some sensible defaults.
-# Make sure to check the documentation at https://goreleaser.com
-
 # The lines below are called `modelines`. See `:help modeline`
 # Feel free to remove those if you don't want/need to use them.
 # yaml-language-server: $schema=https://goreleaser.com/static/schema.json
@@ -44,27 +41,24 @@ nfpms:
     file_name_template: "{{ .ConventionalFileName }}"
     package_name: docker-plugin-cinder
     maintainer: openhpi-cloud
-    description: A Docker volume plugin to use OpenStack Cinder as container volumes 
+    description: A Docker volume plugin to use OpenStack Cinder as container volumes
     homepage: https://github.com/openhpi-cloud/docker-plugin-cinder
     license: MIT
-    bindir: /usr/bin
+    bindir: /usr/local/bin
     contents:
-    - src: example/docker-plugin-cinder.service 
-      dst: /lib/systemd/system/docker-plugin-cinder.service 
-    - src: example/docker-plugin-cinder.socket
-      dst: /lib/systemd/system/docker-plugin-cinder.socket
+      - src: example/docker-plugin-cinder.service
+        dst: /lib/systemd/system/docker-plugin-cinder.service
+      - src: example/docker-plugin-cinder.socket
+        dst: /lib/systemd/system/docker-plugin-cinder.socket
     formats:
       - deb
       - rpm
 
-
 release:
-
   github:
     owner: SLH335
-    name:  docker-plugin-cinder
+    name: docker-plugin-cinder
 
-    
 changelog:
   sort: asc
   filters:
