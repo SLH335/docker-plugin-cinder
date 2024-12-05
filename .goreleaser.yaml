@@ -61,7 +61,7 @@ nfpms:
 release:
 
   github:
-    owner: openhpi-cloud
+    owner: SLH335
     name:  docker-plugin-cinder
 
     
